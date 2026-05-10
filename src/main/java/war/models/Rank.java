@@ -1,3 +1,5 @@
+package war.models;
+
 /**
  * Rank.java - Represents enumeration attributes for
  * the unchanging numerical ranking values of cards

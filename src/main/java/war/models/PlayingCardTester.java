@@ -1,3 +1,5 @@
+package war.models;
+
 /**
  * PlayingCardTester.java - Represents a class to test all attributes of PlayingCard.java
  */

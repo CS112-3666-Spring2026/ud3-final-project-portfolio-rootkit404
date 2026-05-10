@@ -1,13 +1,13 @@
+package war.models;
+import java.util.Objects;
+
 /**
  * PlayingCard.java - Represents the foundational class for game, with Card values,
  * attributes,
  *
  * @author Nathan Tshishimbi <nathanltish@gmail.com>
- * @version 1.0 (04/07/2026)
+ * @version 1.1 (UD2) / (05/09/2026)
  */
-
-import java.util.Objects;
-
 public class PlayingCard {
 
     //*** INSTANCE VARIABLES ***//
