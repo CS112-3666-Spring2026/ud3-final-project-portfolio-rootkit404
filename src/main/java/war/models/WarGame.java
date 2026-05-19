@@ -342,7 +342,7 @@ public class WarGame {
     }
 
     public int getTotalCardsInPlay() {
-        return totalCardsInPlay;
+        return player1.getHandSize() + player2.getHandSize() + warPile.size();
     }
 
     //*** TOSTRING ***//
