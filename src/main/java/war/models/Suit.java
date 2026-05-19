@@ -5,5 +5,5 @@ package war.models;
  * for the unchanging suit values of cards
  */
 public enum Suit {
-    HEARTS, DIAMONDS, CLUBS, SPADES
+    HEART, DIAMOND, CLUB, SPADE
 }

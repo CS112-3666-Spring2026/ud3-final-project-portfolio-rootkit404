@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -21,8 +22,11 @@
               style="-fx-background-color: #0f3d1a; -fx-padding: 12 16 12 16;">
             <Label text="War! Card Game"
                    style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;" />
+            <Label fx:id="timerLabel" text=""
+                   style="-fx-text-fill: #ffcc00; -fx-font-size: 14; -fx-font-weight: bold;"/>
             <Region HBox.hgrow="ALWAYS" />
             <Button fx:id="newGameButton" text="New Game" onAction="#handleNewGame" />
+            <Button fx:id="pauseButton" text="Pause" onAction="#handlePause" />
             <Button fx:id="saveButton" text="Save" onAction="#handleSave" />
             <Button fx:id="loadButton" text="Load" onAction="#handleLoad" />
         </HBox>
@@ -56,12 +60,8 @@
 
                 <!-- Player 1 Card -->
                 <VBox alignment="CENTER" spacing="6">
-                    <Label fx:id="p1CardDisplay" text="?"
-                           prefWidth="110" prefHeight="155" alignment="CENTER"
-                           style="-fx-background-color: white; -fx-border-color: #444444;
-                                  -fx-border-width: 2; -fx-border-radius: 8;
-                                  -fx-background-radius: 8; -fx-font-size: 14;
-                                  -fx-font-weight: bold;" />
+                    <ImageView fx:id="p1CardImageView"
+                           fitWidth="110" fitHeight="155" preserveRatio="true" />
                     <Label text="Your Card"
                            style="-fx-text-fill: #bbbbbb; -fx-font-size: 11;" />
                 </VBox>
@@ -79,12 +79,8 @@
 
                 <!-- Player 2 Card -->
                 <VBox alignment="CENTER" spacing="6">
-                    <Label fx:id="p2CardDisplay" text="?"
-                           prefWidth="110" prefHeight="155" alignment="CENTER"
-                           style="-fx-background-color: white; -fx-border-color: #444444;
-                                  -fx-border-width: 2; -fx-border-radius: 8;
-                                  -fx-background-radius: 8; -fx-font-size: 14;
-                                  -fx-font-weight: bold;" />
+                    <ImageView fx:id="p2CardImageView"
+                           fitWidth="110" fitHeight="155" preserveRatio="true" />
                     <Label text="CPU's Card"
                            style="-fx-text-fill: #bbbbbb; -fx-font-size: 11;" />
                 </VBox>

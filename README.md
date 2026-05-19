@@ -1,71 +1,77 @@
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=22620350)
-# UD1 - OOP + UML
+# Unit Deliverable 2 — War! Card Game GUI
 
-This semester you'll be building Java projects with graphical user interfaces (or better known as GUIs). What do you want to build?! It's time to commit now (sort of)!
+## Project Description
 
-The purpose of this unit deliverable is to help you start planning your final project. Most likely your design will change when you're building the project near the end of the semester, but your goal is to plan as much of the project as you can with as much detail as possible! The more the better! Since we haven't ever built a GUI, that means we focus on the back-end of the program a.k.a. just the data side.
+This project is a Java implementation of the classic **War** card game, built with **JavaFX** for the GUI and following the **Model-View-Controller (MVC)** design pattern. The game puts a human player (you) against a CPU opponent — each round both players draw a card, and the higher rank wins. Tied ranks trigger a "War" sequence where additional cards are staked.
 
-## Project Requirements\*
-- Create a full UML diagram, following proper syntax, for your final project idea
-- Build only ONE of your classes, including all required methods for model classes (3 constructors, setters, getters, equal, and toString)
-- A full tester class for your class
-- You must thoughtfully use the following in the planning of your project:
-    - Concrete class
-    - Inheritance/Polymorphism
-- You must use at least 1 of the following topics thoughtfully in your project and provide an explanation of why the others are not necessary:
-    - Abstract class
-    - Inner class
-    - Custom exception
+UD2 focuses on building the **front-end (View + Controller)** and integrating the `PlayingCard` model class from UD1 as a proof of concept. The full game logic (Deck, Player, WarGame) and File I/O (save/load) will be connected in UD3.
 
-## Grading
-Remember we're following the EARN grading scale:
-- :rocket: (E)xceeds Expectations:
-    - same as (A)
-    - every file + method documented
-- :white_check_mark: (A)cceptable:
-    - complete UML diagram with correct syntax
-    - complete model class (with all required methods)
-    - code follows Java convention/style
-    - basic tester
-- :wrench: \(R\)evision Required: meets some lab requirements, feedback is left for how to get it to E/A grade
-- :question: (N)ot Assessable: does not meet many, if any, lab requirements
+---
 
-## Tips
-- Note that you can always add more to your project later, but start conservative with your design and be thoughtful with how you use each OOP concept
-    - Most likely you will need several concrete classes, so make sure to create the UML class diagram for each
-    - However, you can start simple! Keep your UML class diagrams minimal as you brainstorm and get advice from tutors, classmates, your instructor, etc.
-    - Make sure you are using the right relationship between classes (composition vs. inheritance vs. inner class)
-- I recommend you choose the model class that is most fundamental to your project. That might be an abstract class!
-- You can mimic UD0, where the Card class was the most fundamental part to the project and the tester was provided (CardTester.java)
+## GUI Wireframe
+
+The wireframe below shows the bare-bones layout designed before any code was written. (All components from the wireframe are implemented in the actual FXML).
+
+![War Game Wireframe](src/docs/wireframe.png)
+
+**Layout breakdown:**
+
+- **Top bar** — Game title + three menu buttons (New Game, Save, Load)
+- **Player info row** — Player names and card counts displayed on each side
+- **Card display area** — Two card zones (Player 1 and Player 2) flanking a center "VS" indicator
+- **Status message** — A dynamic label in the center that updates each round with the result
+- **Action buttons** — "Draw Card" (always active) and "Resolve War" (disabled until a tie occurs)
+- **Score bar (bottom)** — Round counter and win tallies for both players
+
+---
+
+## UD2 Implementation Details
+
+### New files in this deliverable
+
+| File                  | Role                                                                     | Layer (MVC)    |
+|-----------------------|--------------------------------------------------------------------------|----------------|
+| `WarGameApp.java`     | Main entry point — loads FXML and launches the JavaFX window             | Application    |
+| `game.fxml`           | GUI layout built with SceneBuilder — all components and `fx:id` bindings | **View**       |
+| `GameController.java` | Handles all button events, updates UI labels                             | **Controller** |
+
+### Event handlers Wired
+
+Every button in the GUI is connected to a handler method in `GameController`:
+
+- **Draw Card** → `handleDraw()` — Creates two random `PlayingCard` objects, displays them, and uses `beats()` to determine the round winner
+- **Resolve War** → `handleResolveWar()` — Stub; prints to console (full war logic in UD3)
+- **New Game** → `handleNewGame()` — Resets all labels, counters, and card displays to initial state
+- **Save** → `handleSave()` — Stub; prints to console (File I/O in UD3)
+- **Load** → `handleLoad()` — Stub; prints to console (File I/O in UD3)
+
+### PlayingCard integration (proof of concept)
+
+The `handleDraw()` method demonstrates the UD1 model class working inside the GUI:
+
+1. Randomly selects a `Suit` and `Rank` from their enum values for each player
+2. Creates two `PlayingCard` objects using the full constructor
+3. Displays each card in the GUI using `PlayingCard.toString()`
+4. Calls `PlayingCard.beats()` to compare ranks and updates the status label with the result
+5. On a tie, enables the "Resolve War" button
+
+This helps demonstrate how the **Model → Controller → View** pipeline works end-to-end, even before the full game engine is built.
+
+---
+
+## How to Run
+
+1. Open the project in **IntelliJ IDEA**
+2. Ensure JavaFX SDK is configured (VM options: `--module-path /path/to/javafx/lib --add-modules javafx.controls,javafx.fxml`)
+3. Run `WarGameApp.java`
 
 
-Your ultimate goal is to plan as much as possible, so that the feedback you get helps with your final project implementation as much as possible. You are coding the bare minimum (just one class) because we want to emphasize the planning before we fully commit to a full project when we haven't gone over all concepts/tools in the course yet!
+---
 
-## Useful Tools
-You're using some really sophisticated development tools, take advantage! Here are some suggestions to help you draw your UML diagrams:
-- Paper + Pencil
-    - A classic, use it to brainstorm and send me pictures of to give you quick and simple guidance!
-    - You'll need to digitize whatever you submit, so checkout the others below at some point to prepare your UD1 submission
-- Draw.io / Diagrams.net
-    - Free platform, requires Google login
-    - Integrates with VS Code/Codespaces (extensions already added that supports .drawio files
-    - https://www.drawio.com/
-- LucidChart
-    - Free platform (for a few files at a time), requires an account but can use login services like Google, Microsoft, etc.
-    - https://www.lucidchart.com/
-- PlantUML
-    - Creates diagrams for you from a simple language like this markdown
-    - Add VS Code extension in Codespace for ease of use!
-    - https://plantuml.com/class-diagram
+## What's Next (UD3)
 
-
-## \*Group Work
-**Please give your instructor a heads up that you're working in a group, along with the members names, to modify your repository to allow all of you to modify the project!**
-* Tip: Create a branch for each member to work on, and [merge](https://www.youtube.com/watch?v=XX-Kct0PfFc) to resolve conflicts. Checkout other guides online as well as the tutors and your instructor for support!
-
-The [Project Requirements](#project-requirements*) above applies for individual projects. For group projects, modify as follows:
-- The model+tester requirement is per person
-    - Example: team of 3 means you each build a model class + tester, for a total of 3 model classes and testers
-- Document who is in charge of which classes
-- You can absolutely help each other with the code you're responsible for, that's the point of collaborating!
-- Ultimately, you are responsible for your files working and meeting our specifications above
+- Build remaining model classes: `Deck`, `Player` (abstract), `HumanPlayer`, `AIPlayer`, `WarGame`
+- Connect full game logic to the GUI (replace random card generation with actual deck/hand management)
+- Implement `EmptyDeckException` for edge cases (player runs out of cards mid-war)
+- Add File I/O with `GameState` serialization for save/load functionality
+- Polish: game-over state, win animations(maybe), and final presentation prep

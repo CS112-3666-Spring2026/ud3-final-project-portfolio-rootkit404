@@ -1,6 +1,7 @@
 module war {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.graphics;
 
     opens war to javafx.fxml;
     opens war.controllers to javafx.fxml;

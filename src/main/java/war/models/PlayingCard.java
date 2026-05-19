@@ -1,13 +1,12 @@
 package war.models;
-import java.util.Objects;
+/*
+  PlayingCard.java - Represents the foundational class for game, with Card values,
+  attributes,
 
-/**
- * PlayingCard.java - Represents the foundational class for game, with Card values,
- * attributes,
- *
- * @author Nathan Tshishimbi <nathanltish@gmail.com>
+  @author Nathan Tshishimbi <nathanltish@gmail.com>
  * @version 1.1 (UD2) / (05/09/2026)
  */
+
 public class PlayingCard {
 
     //*** INSTANCE VARIABLES ***//
@@ -49,7 +48,7 @@ public class PlayingCard {
      * Defaults to Ace of Spades, face down.
      */
     public PlayingCard() {
-        this.suit = Suit.SPADES;
+        this.suit = Suit.SPADE;
         this.rank = Rank.ACE;
         this.isFaceUp = false;
     }
@@ -165,7 +164,7 @@ public class PlayingCard {
     /**
      * Returns a string representation of the card.
      * If the card is face-down, it returns "[Hidden Card]".
-     * If face-up, it returns the rank and suit (e.g., "ACE of SPADES").
+     * If face-up, it returns the rank and suit (e.g., "ACE of SPADE").
      *
      * @return a human-readable string for this card
      */
