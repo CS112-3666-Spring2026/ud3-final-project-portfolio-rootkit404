@@ -1,6 +1,6 @@
 package war.models;
 
-/**
+/*
  * EmptyDeckException.java - Custom checked exception thrown when a player
  * attempts to draw or play a card from an empty hand or deck.
  *
@@ -12,7 +12,7 @@ package war.models;
  * condition gracefully rather than crashing.
  *
  * @author Nathan Tshishimbi
- * @version 1.3 (UD3) / (05/09/2026)
+ * @version 2.0 (UD3) / (05/18/2026)
  */
 public class EmptyDeckException extends Exception {
 

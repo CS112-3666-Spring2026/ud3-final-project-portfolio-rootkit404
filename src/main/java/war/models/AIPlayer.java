@@ -1,17 +1,17 @@
 package war.models;
 
-/**
- * AIPlayer.java - Represents the CPU opponent in the War card game.
- * Extends the abstract Player class and implements chooseCard().
- *
- * In standard War, card selection is deterministic (top card), identical
- * to HumanPlayer. But, this class includes pickHighestCard() as a
- * private helper to demonstrate that AIPlayer COULD use a different
- * strategy — this is the key polymorphism: WarGame calls chooseCard()
- * on a Player reference without knowing which subclass handles it.
- *
- * @author Nathan Tshishimbi
- * @version 1.3 (UD3) / (05/09/2026)
+/*
+  AIPlayer.java - Represents the CPU opponent in the War card game.
+  Extends the abstract Player class and implements chooseCard().
+
+  In standard War, card selection is deterministic (top card), identical
+  to HumanPlayer. But, this class includes pickHighestCard() as a
+  private helper to demonstrate that AIPlayer COULD use a different
+  strategy — this is the key polymorphism: WarGame calls chooseCard()
+  on a Player reference without knowing which subclass handles it.
+
+  @author Nathan Tshishimbi
+ * @version 2.0 (UD3) / (05/18/2026)
  */
 
 import java.util.List;

@@ -3,7 +3,7 @@ package war.models;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
+/*
  * WarGame.java - Core game logic for the War card game.
  * Manages the deck, both players, the pot of cards in play, and the
  * turn-by-turn flow of the game. Supports round-limited modes (20/50)
@@ -14,7 +14,7 @@ import java.util.List;
  * and uses the returned RoundResult to update the View.
  *
  * @author Nathan Tshishimbi
- * @version 1.3 (UD3) / (05/09/2026)
+ * @version 2.0 (UD3) / (05/18/2026)
  */
 public class WarGame {
 

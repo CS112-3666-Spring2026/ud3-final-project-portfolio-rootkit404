@@ -12,7 +12,7 @@ package war.models;
   WarGame calls chooseCard() on Player references without knowing the subtype.
 
   @author Nathan Tshishimbi
- * @version 1.3 (UD3) / (05/09/2026)
+ * @version 2.0 (UD3) / (05/18/2026)
  */
 
 import java.util.ArrayList;

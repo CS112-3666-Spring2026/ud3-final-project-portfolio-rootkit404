@@ -127,11 +127,11 @@ Replace `/path/to/javafx-sdk-22.0.1/lib` with the actual path on your machine.
 | 5 Minutes   | Timer counts down from 5:00; most cards when time runs out wins  |
 | 10 Minutes  | Timer counts down from 10:00; most cards when time runs out wins |
 
-3. **Click "Draw Card"** — both players reveal their top card with a flip animation
-4. **Higher card wins the round** and takes both cards
-5. **On a tie — WAR!** A popup appears; click OK to stake 3 face-down cards + 1 face-up each. Highest war card wins everything in the pile
-6. **Pause** (time attack only) — freezes the timer and disables Draw until resumed
-7. **Game ends** when a player runs out of cards, the round limit is hit, or the timer expires
+1. **Click "Draw Card"** — both players reveal their top card with a flip animation
+2. **Higher card wins the round** and takes both cards
+3. **On a tie — WAR!** A popup appears; click OK to stake 3 face-down cards + 1 face-up each. Highest war card wins everything in the pile
+4. **Pause** (time attack only) — freezes the timer and disables Draw until resumed
+5. **Game ends** when a player runs out of cards, the round limit is hit, or the timer expires
 
 ---
 

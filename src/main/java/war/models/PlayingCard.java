@@ -4,7 +4,7 @@ package war.models;
   attributes,
 
   @author Nathan Tshishimbi <nathanltish@gmail.com>
- * @version 1.1 (UD2) / (05/09/2026)
+  @version 2.0 (UD3) / (05/18/2026)
  */
 
 public class PlayingCard {

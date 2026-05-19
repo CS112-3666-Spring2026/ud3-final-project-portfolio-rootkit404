@@ -1,15 +1,15 @@
 package war.controllers;
 
-/**
- * GameController.java - JavaFX controller that connects the WarGame model
- * to the GUI. Handles all button events, updates the view after each round,
- * and manages the war popup dialog flow.
- *
- * MVC role: This is the Controller — it knows about both the Model (WarGame)
- * and the View (FXML labels/buttons), but the Model knows nothing about JavaFX.
- *
- * @author Nathan Tshishimbi
- * @version 1.3 (UD3) / (05/09/2026)
+/*
+  GameController.java - JavaFX controller that connects the WarGame model
+  to the GUI. Handles all button events, updates the view after each round,
+  and manages the war popup dialog flow.
+
+  MVC role: This is the Controller — it knows about both the Model (WarGame)
+  and the View (FXML labels/buttons), but the Model knows nothing about JavaFX.
+
+  @author Nathan Tshishimbi
+ * @version 2.0 (UD3) / (05/18/2026)
  */
 
 //*** IMPORTS SECTION ***//
@@ -40,7 +40,6 @@ import javafx.util.Duration;
 import javafx.application.Platform;
 import java.io.IOException;
 import java.net.URL;
-
 
 
 public class GameController {
@@ -247,6 +246,7 @@ public class GameController {
         }
     }
 
+    //*** FUTURE-USE METHODS ***//
     /**
      * Save button handler — stub until File I/O is implemented.
      * (Excluded for UD3)
@@ -525,7 +525,7 @@ public class GameController {
     /**
      * Builds and loads the card image for a given PlayingCard.
      * Filename format matches the htdebeer/SVG-cards convention:
-     * {suit}_{rank}.png  e.g. "spade_2.png", "hearts_10.png"
+     * {suit}_{rank}.png  e.g. "spade_2.png", "heart_10.png"
      *
      * @param card the PlayingCard to get an image for
      * @return the card's face image, or the back image if card is null
@@ -575,6 +575,7 @@ public class GameController {
      * @param imageView the ImageView to animate
      * @param newImage  the card face image to reveal at the midpoint
      */
+    @SuppressWarnings("JavadocBlankLines")
     private void flipCardImage(ImageView imageView, Image newImage) {
         // Phase 1 — shrink to zero (card goes "edge-on")
         ScaleTransition shrink = new ScaleTransition(Duration.millis(150), imageView);

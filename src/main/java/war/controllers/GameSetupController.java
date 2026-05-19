@@ -1,13 +1,13 @@
 package war.controllers;
 
-/**
- * GameSetupController.java - Controls the game setup dialog.
- * Shown when the player clicks "New Game." The user selects either
- * a round-limited mode or a time attack mode. Once a button is clicked,
- * the dialog closes and GameController reads the selections.
- *
- * @author Nathan Tshishimbi
- * @version 1.3 (UD3)
+/*
+  GameSetupController.java - Controls the game setup dialog.
+  Shown when the player clicks "New Game." The user selects either
+  a round-limited mode or a time attack mode. Once a button is clicked,
+  the dialog closes and GameController reads the selections.
+
+  @author Nathan Tshishimbi
+ * @version 2.0 (UD3) / (05/18/2026)
  */
 
 import javafx.fxml.FXML;

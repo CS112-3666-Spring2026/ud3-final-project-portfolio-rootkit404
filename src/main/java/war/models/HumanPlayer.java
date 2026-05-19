@@ -1,6 +1,6 @@
 package war.models;
 
-/**
+/*
  * HumanPlayer.java - Represents the human player in the War card game.
  * Extends the abstract Player class and implements chooseCard().
  *
@@ -9,7 +9,7 @@ package war.models;
  * The GUI drives the timing of when chooseCard() is called (on button click).
  *
  * @author Nathan Tshishimbi
- * @version 1.3 (UD3) / (05/09/2026)
+ * @version 2.0 (UD3) / (05/18/2026)
  */
 public class HumanPlayer extends Player {
 

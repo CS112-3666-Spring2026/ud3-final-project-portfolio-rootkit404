@@ -5,7 +5,7 @@ package war;
   Loads the FXML layout and launches the JavaFX window.
 
   @author Nathan Tshishimbi
- * @version 1.3 (UD3) / (05/09/2026)
+  @version 2.0 (UD3) / (05/18/2026)
  */
 
 import javafx.application.Application;
